@@ -10,7 +10,7 @@ array = [i for i=1:10^3]
 darray = distribute(array)
 
 f_clojure = (() -> mapreduce(f, op, localpart(darray)))
-@test mapreduce(f, op, array) == tree_map_reduce(f_clojure, op)
+@test mapreduce(f, op, array) == tmapreduce(f_clojure, op)
 
 
 ## TreeMapReduce on distributed arrays
